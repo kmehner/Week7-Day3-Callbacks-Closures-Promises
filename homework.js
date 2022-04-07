@@ -50,13 +50,26 @@ function getMovieInfo(movieName){
 // console.log(getMovieInfo('MovieName'))
 
 
-async function returnMovie(movieName){
-    try{
-        let t = await getMovieInfo (movieName)
-        console.dir(t)
-    } catch(e){
-        console.error(e)
-    }
+// Async/Await
+
+// async function returnMovie(movieName){
+//     try{
+//         let t = await getMovieInfo (movieName)
+//         console.dir(t)
+//     } catch(e){
+//         console.error(e)
+//     }
+// }
+
+// returnMovie('I want the movie')
+
+
+// .then/.catch
+
+function returnMovie(movieName){
+    getMovieInfo(movieName)
+        .then(t => console.dir(t))
+        .catch(e => console.error(e))
 }
 
 returnMovie('I want the movie')
